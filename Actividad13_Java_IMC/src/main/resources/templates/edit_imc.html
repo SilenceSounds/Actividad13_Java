@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Editar IMC</title>
+    </head>
+    <body>
+        <div>
+            <h1>Editar IMC</h1>
+            <br />
+            <form action="#" th:action="@{/save}" th:object="${imc}"
+                  method="post">
+
+                <label for="id">ID:</label>
+                <input id="id" type="text" th:field="*{id}" readonly="readonly"/>
+
+                <label for="name">Nombre:</label>
+                <input id="name" type="text" th:field="*{name}" />
+
+                <label for="lastname">Apellido: </label>
+                <input id="lastname" type="text" th:field="*{lastname}" placeholder="Escribe el valor de la altura"/>
+
+                <label for="age">Edad:</label>
+                <input id="age" type="text" th:field="*{age}" placeholder="Escribe la edad de la persona"/>
+
+                <label for="height">Altura:</label>
+                <input id="height" type="text" th:field="*{height}" placeholder="Escribe el valor de la altura"/>
+
+                <label for="weight">Peso:</label>
+                <input id="weight" type="text" th:field="*{weight}" placeholder="Escribe el valor de la base"/>
+
+                <label for="imc">IMC:</label>
+                <input id="imc" type="text" th:field="*{imc}" placeholder="Escribe el valor de la base" disabled/>
+
+                <label for="date">Fecha:</label>
+                <input id="date" type="date" th:field="*{date}" placeholder="Escribe la fecha"/>
+
+
+                <button type="submit">Save</button>
+
+
+            </form>
+        </div>
+    </body>
+</html>

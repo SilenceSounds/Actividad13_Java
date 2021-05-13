@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Create New IMC</title>
+    </head>
+    <body>
+        <div>
+            <h1>Inicio de Sesión</h1>
+            <form action="#" th:action="@{/login}" th:object="${usuario}" method="post">
+
+                <label for="user">Usuario:</label>
+                <input id="user" type="text" th:field="*{idusuario}" placeholder="Ingresa tu usuario"/>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" th:field="*{password}" placeholder="Ingresa tu contraseña"/>
+
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8"/>
+        <script src="https://kit.fontawesome.com/2b2371c6d2.js" crossorigin="anonymous"></script>
+        <title>IMC Manager</title>
+    </head>
+    <body>
+        <div>
+            <p th:text="${session.mySessionAttribute}" th:unless="${session == null}">[...]</p>
+            
+            <h1>Lista de IMC</h1>
+            
+            <div>
+                <div>
+                <a href="new"><i class="fas fa-plus"></i> Nueva persona</a> 
+            </div>
+            
+            <table>
+                
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                        <th>Height</th>
+                        <th>Weight</th>
+                        <th>IMC</th>
+                        <th>Date</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="imc : ${imcList}">
+                        <td th:text="${imc.id}">Person ID</td>
+                        <td th:text="${imc.name}">Name</td>
+                        <td th:text="${imc.lastname}">Last Name</td>
+                        <td th:text="${imc.age}">Age</td>
+                        <td th:text="${imc.height}">Height</td>
+                        <td th:text="${imc.weight}">Weight</td>
+                        <td th:text="${imc.imc}">IMC</td>
+                        <td th:text="${imc.date}">Date</td>
+                        <td>
+                            <a th:href="@{'/edit/' + ${imc.id}}"><i class="fas fa-edit"></i></a>
+                            &nbsp;&nbsp;&nbsp;
+                            <a th:href="@{'/delete/' + ${imc.id}}"><i class="fas fa-trash"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            </div>
+            
+            
+        </div>    
+    </body>
+</html>

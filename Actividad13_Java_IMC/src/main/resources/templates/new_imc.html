@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <title>Nuevo IMC</title>
+    </head>
+    <body>
+
+        <div>
+            <h1>Agregar IMC</h1>
+            <form action="#" th:action="@{/save}" th:object="${imc}"
+                  method="post">
+
+                <label for="name">Nombre:</label>
+                <input id="name" class="text-box" type="text" th:field="*{name}" placeholder="Escribe el nombre de la persona"/>
+
+                <label for="lastname">Apellido: </label>
+                <input id="lastname" class="text-box" type="text" th:field="*{lastname}" placeholder="Escribe el valor de la altura"/>
+
+                <label for="age">Edad:</label>
+                <input id="age" type="text" th:field="*{age}" placeholder="Escribe la edad de la persona"/>
+
+                <label for="height">Altura:</label>
+                <input id="height" type="text" th:field="*{height}" placeholder="Escribe el valor de la altura"/>
+
+                <label for="weight">Peso:</label>
+                <input id="weight" class="text-box" type="text" th:field="*{weight}" placeholder="Escribe el valor de la base"/>
+
+                <label for="date">Fecha:</label>
+                <input id="date"  type="date" th:field="*{date}" placeholder="Escribe la fecha"/>
+
+                <button type="submit">Save</button>
+
+            </form>
+        </div>
+
+    </body>
+</html>
